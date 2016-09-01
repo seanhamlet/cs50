@@ -24,6 +24,15 @@ My solutions for [CS50x - Introduction to Computer Science](https://www.edx.org/
 2. caesar.c   - Encrypts plain text using Caesar cipher algorithm. Inputs: secret key, plain text. Usage: ./caesar <secretkey>
 3. vigenere.c - Encrypts plain text using Vigenere cipher algorithm. Inputs: secret key, plain text. Usage: ./vigenere <secretkey>
 
-## Week 3
+## Week 3 - pset3
+
+1. find
+Requirements:
+  + Write a sorting algorithm - chose selection sort
+  + Write a search algorithm  - chose binary search (requires sorted array)
+  + Use generate.c to generate a list (user chooses size) of pseudorandom numbers with an optional seed point input. Use find.c to determine if a number is within list of numbers. Binary Search with Selection Sort was used as the search/sort algorithm for find.c and are functions in helpers.c.
+Usage: ./generate 1000 50 | ./find 127
+
+2. fifteen - Play game of fifteen. Usage: 
 
 ## Week 4
