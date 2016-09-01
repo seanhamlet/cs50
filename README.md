@@ -1,6 +1,6 @@
 # CS50x
 
-My solutions for CS50x - Introduction to Computer Science, an online course by Harvard University.
+My solutions for [CS50x - Introduction to Computer Science](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x), an online course by Harvard University.
 
 ## Week 0
 
