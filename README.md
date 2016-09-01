@@ -13,16 +13,16 @@ My solutions for [CS50x - Introduction to Computer Science](https://www.edx.org/
 
 ## Week 1 - pset1
 
-1. hello.c  - Prints "Hello, world" to the terminal.
-2. water.c  - Converts time in shower (minutes) to water used (bottles). Input: minutes in shower.
-3. mario.c  - Prints pyramid from Mario using hashes. Input: height.
-4. greedy.c - Converts change in dollars number of coins due. Coin values: quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢). Rule: Use the least number of coins.
+1. hello.c  - Prints "Hello, world" to the terminal. Usage: ./hello
+2. water.c  - Converts time in shower (minutes) to water used (bottles). Input: minutes in shower. Usage: ./water
+3. mario.c  - Prints pyramid from Mario using hashes. Input: height. Usage: ./mario
+4. greedy.c - Converts change in dollars number of coins due. Coin values: quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢). Rule: Use the least number of coins. Usage: ./greedy
 
 ## Week 2 - pset2
 
-1. initials.c - Prints capitalized initals of full name. Input: full name (capitalized or not).
-2. caesar.c   - Encrypts plain text using Caesar cipher algorithm. Inputs: secret key, plain text.
-3. vigenere.c - Encrypts plain text using Vigenere cipher algorithm. Inputs: secret key, plain text.
+1. initials.c - Prints capitalized initals of full name. Input: full name (capitalized or not). Usage: ./initials
+2. caesar.c   - Encrypts plain text using Caesar cipher algorithm. Inputs: secret key, plain text. Usage: ./caesar <secretkey>
+3. vigenere.c - Encrypts plain text using Vigenere cipher algorithm. Inputs: secret key, plain text. Usage: ./vigenere <secretkey>
 
 ## Week 3
 
