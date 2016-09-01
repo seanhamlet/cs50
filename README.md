@@ -14,11 +14,15 @@ My solutions for CS50x - Introduction to Computer Science, an online course by H
 ## Week 1 - pset1
 
 1. hello.c  - Prints "Hello, world" to the terminal.
-2. water.c  - Converts time in shower (minutes) to water used (bottles). User prompted minutes in shower.
-3. mario.c  - Prints pyramid from Mario using hashes. User prompted height.
+2. water.c  - Converts time in shower (minutes) to water used (bottles). Input: minutes in shower.
+3. mario.c  - Prints pyramid from Mario using hashes. Input: height.
 4. greedy.c - Converts change in dollars number of coins due. Coin values: quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢). Rule: Use the least number of coins.
 
-## Week 2
+## Week 2 - pset2
+
+1. initials.c - Prints capitalized initals of full name. Input: full name (capitalized or not).
+2. caesar.c   - Encrypts plain text using Caesar cipher algorithm. Inputs: secret key, plain text.
+3. vigenere.c - Encrypts plain text using Vigenere cipher algorithm. Inputs: secret key, plain text.
 
 ## Week 3
 
