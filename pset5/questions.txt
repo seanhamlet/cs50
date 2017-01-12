@@ -1,0 +1,69 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+According to Merriam-Webster dictionary, a pneumonoultramicroscopicsilicovolcanoconiosis is a pneumoconiosis caused by inhalation of
+very fine silicate or quartz dust
+
+1.  According to its man page, what does getrusage do?
+getrusage gets the resource usage, which can include time taken and memory used.
+
+2.  Per that same man page, how many members are in a variable of type struct rusage?
+There are 16 members in the variable of type struct rusage.
+
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+Is it because the size of rusage is so large it would take a while to load into memory when passing by value. Therefore, it speeds up the program to
+pass it by reference.
+
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+After main sucessfully creates a file pointer to "text", it goes about reading words from that file using a for loop. This for loop
+reads the file one character at a time. Several checks are then performed once a character is read to determine if the character is valid.
+The first if-statement makes sure that only alphabetical characters and apostrophes (not the first character of a word) are valid.
+If the character is valid, it is added the word array and the index of the word array is updated for the next character. Once the index
+is updated, a check is performed to make sure the word that is being read is not too long, if it is, the word is skipped over and not saved
+in the word array or checked for misspellings.
+The second part of the if-statement makes sure to not include words with numbers in them. If it finds a word with numbers in it, the word
+is skipped over.
+A word has been fully captured when the previous 2 if-statements being not true (e.g. found a space) and the index of the word array is greater than zero.
+Then the word needs to be terminated with '\0'. The word counter is updated and then the word is checked for misspelling.
+
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+fscanf requires a format for it to look for a string. That means that if the format you provide for words is different for different text examples,
+the program is limited to what texts it can read. Also, once a string is read, with "%s", you may also still need to check if the word is only
+alphabetical, with apostrophes, contains a digit, etc, which will likely require more code than just reading in a character at a time and doing
+the validation checks for each character.
+
+6.  Why do you think we declared the parameters for check and load as const?
+The parameters for check and load are declared as const because they do not change or vary.
+This makes sure that a word cannot be accidentally changed when checking for misspelling or
+a dicionary cannot be changed when being loaded into memory.
+
+7.  What data structure(s) did you use to implement your spell-checker? Be sure not to leave your answer at just "hash table," "trie," or the like. Expound on what’s inside each of your "nodes."
+I used a hashtable that was an array, where each element of that array contained a single-linked list.
+Each single-linked list was made up of nodes. Each node was a user-defined structure that contained a variable "word" (char data type) that
+was defined to be the maximum length of a word (LENGTH) + 1 (for the '\0' character). The node structure also contained a pointer called "next"
+that would defaultly be initialized to point to NULL (indicating the end of the list), but then would be updated to point to the "next"
+item in the single-linked list if needed.
+
+8.  How slow was your code the first time you got it working correctly?
+TIME IN load:         0.02
+TIME IN check:        0.44
+TIME IN size:         0.00
+TIME IN unload:       0.00
+TIME IN TOTAL:        0.46
+
+For first run through of austinpowers.txt using dictionary/large.
+
+After updating the hash function (as described in answer to question 9):
+
+TIME IN load:         0.03
+TIME IN check:        0.08
+TIME IN size:         0.00
+TIME IN unload:       0.00
+TIME IN TOTAL:        0.11
+
+9.  What kinds of changes, if any, did you make to your code in order to improve its performance?
+Updated the hash function to use all of the information for each word instead of just the first letter.
+Specically, I changed the hash function to sum the ascii values of all letters in a word, then mod that with the SIZE of
+the hashtable.
+
+10. Do you feel that your code has any bottlenecks that you were not able to chip away at?
+I was not able to insert the word into the single-linked list to keep it sorted. I think this would have
+slowed down loading a bit, but sped up checking and led to an overall lower "TIME IN TOTAL".
