@@ -1,0 +1,78 @@
+Sean M Hamlet
+CS50
+Problem Set 4
+20161028
+
+0.  How many different colors does each format support?
+BMP supports up to ~4 billion (2^32) colors (up to 32 bits per pixel).
+GIF supports up to 256 colors (up to 8 bits per pixel).
+JPEG supports up to ~16 million (2^24) colors (up to 8 bits per RGB color for a total of 24 bits per pixel).
+PNG supports up to ~16 million (2^24) colors (up to 8 bits per RGB color for a total of 24 bits per pixel).
+
+1.  Which of the formats supports animation?
+The GIF format supports animation.
+
+2.  What’s the difference between lossy and lossless compression?
+In lossy compression, all of the original data cannot be recovered after compression (i.e. data is thrown out during the compression process).
+In lossless compression, all of the original data can be recovered after compression. Therefore, with lossless compression,
+you can convert back and forth between lossless-compressed and original file easily.
+
+3.  Which of these formats is lossy-compressed?
+JPEG is lossy compressed.
+
+4.  What happens, technically speaking, when a file is deleted on a FAT file system?
+Technically speaking, the first character of the files directory entory is modified to signal that the file has been deleted. Then the file's
+memory clusters are added to the list of the hard drive's free clusters (indicating that the memory location can be written to by other data). So the file is not
+really gone and in this case, could be recovered if not overwritten.
+
+5.  What can someone like you do to ensure (with high probability) that files you delete cannot be recovered?
+One way to ensure (with high probability) that files I delete cannot be recrovered would be to overwrite the deleted file memory location with
+random ones and zeros. It would be difficult to recover the original data since the data has been overwritten.
+
+6.  What’s stdint.h?
+stdint.h is a header file that defines specific type aliases with specific widths and max sizes. In particular, this header file contains the type definitions used
+to create the user-defined typedefs in the bmp.h header of BYTE, DWORD, LONG, and WORD.
+
+7.  What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+The point is to make sure that the typedefs that are defined are exactly a specific bit width without padding. For example,
+unint8_t is an unsigned integer of exactly 8 bits.
+
+8.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+A BYTE is 1 byte. A DWORD is 4 bytes. A LONG is 4 bytes. A WORD is 2 bytes.
+
+9.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be?
+(Leading bytes used to identify file formats (with high probability) are generally called "magic numbers.)"
+The first two bytes of the BMP file contains the bfType, which is the file type and must be "BM" for bitmap files.
+
+10. What’s the difference between bfSize and biSize?
+"bfSize" is the size, in bytes, of the bitmap file. "biSize" is is the size of the structure (or BITMAPINFOHEADER) in bytes.
+
+11. What does it mean if biHeight is negative?
+If the biHeight is negative it means that the bitmap is a top-down device independent bitmap and the origin is the upper-left corner.
+
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+The biBitCount field of the BITMAPINFOHEADER specifies the BMP's color depth in bits per pixel.
+
+13. Why might fopen return NULL in copy.c:37?
+One reason fopen might return NULL is if the file has already been created and it is write-protected. Due to write protection,
+the file won't be able to be written to, and thus fopen will return 0 or NULL indicating it cannot write.
+Another reason could be that the system is out of memory or that we don't have permissions to write in the directory we are trying
+to write into.
+
+14. Why is the third argument to fread always 1 in our code?
+The third argument in fread indicates the number of elements you want to read. The third argument in fread is always 1 
+because the code is only reading one element at at time. Specifically, the code only reads one BITMAPFILEHEADER, one BITMAPINFOHEADER,
+and then loops through and reads one RGBTRIPLE each time it reads.
+
+15. What value does copy.c:70 assign padding if bi.biWidth is 3
+Assuming sizeof(RGBTRIPLE) is 3 bytes/ pixel, padding is 3 bytes if bi.biWidth is 3 pixels.
+
+16. What does fseek do?
+fseek sets the position in the file using a given offset and a reference position (e.g. SEEK_CUR. SEEK_SET, or SEEK_END).
+In copy.c, fseek is used to skip over any padding to find the next RGBTRIPLE.
+
+17. What is SEEK_CUR?
+SEEK_CUR is the current position of the file pointer.
+
+18. Whodunit?
+Rick Astley
