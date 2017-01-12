@@ -38,12 +38,12 @@ Usage: ./generate 1000 50 | ./find 127
 ## Week 4 - pset4
 
 1. whodunit.c - Umasks red-filtered bmp image to reveal whodunit! 
-Usage: ```./whodunit infile outfile```
-  + Example: ```./whodunit clue.bmp verdict.bmp```
+Usage: ./whodunit infile outfile
+  + Example: ./whodunit clue.bmp verdict.bmp
   
 2. resize.c - Resized bmp image
-Usage: ```./resize <resize-factor> infile outfile```
+Usage: ./resize <resize-factor> infile outfile
 
 3. recover.c - Recovers JPEGs from a forensic image (card.raw)
-Usage: ```./recover```
+Usage: ./recover
 
