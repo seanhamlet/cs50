@@ -47,3 +47,10 @@ Usage: ./resize <resize-factor> infile outfile
 3. recover.c - Recovers JPEGs from a forensic image (card.raw)
 Usage: ./recover
 
+### Week 5 - pset5
+
+1. speller.c - Implements a spell checker
+Usage: speller [dictionary] text
+
+### Week 8 - pset6
+
