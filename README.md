@@ -33,6 +33,8 @@ Requirements:
   + Use generate.c to generate a list (user chooses size) of pseudorandom numbers with an optional seed point input. Use find.c to determine if a number is within list of numbers. Binary Search with Selection Sort was used as the search/sort algorithm for find.c and are functions in helpers.c.
 Usage: ./generate 1000 50 | ./find 127
 
-2. fifteen - Play game of fifteen. Usage: 
+2. fifteen - Play game of fifteen. Usage: ./fifteen <boardsize>
 
 ## Week 4
+
+
